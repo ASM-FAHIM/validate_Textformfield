@@ -15,7 +15,8 @@ class _HomePage1State extends State<HomePage1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff205a59),
+      // backgroundColor: Color(0xff205a59),
+      backgroundColor: Colors.white,
       appBar: AppBar(),
       body: Form(
         key: _formKey,
@@ -33,9 +34,12 @@ class _HomePage1State extends State<HomePage1> {
                   } else if (value.isNotEmpty && value.length < 3) {
                     return "too short name";
                   } else {
-                    return "field can\'t be empty";
+                    return "field can't be empty";
                   }
                 },
+              ),
+              const SizedBox(
+                height: 20,
               ),
               ReusableF(
                 hintText: "Enter Age",

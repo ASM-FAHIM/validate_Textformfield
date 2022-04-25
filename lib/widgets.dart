@@ -8,11 +8,37 @@ class ReusableF extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        hintText: hintText,
+    return SizedBox(
+      height: 70,
+      child: TextFormField(
+        decoration: InputDecoration(
+          prefixIcon: Icon(Icons.email_outlined),
+          suffixIcon: Icon(Icons.privacy_tip_outlined),
+          hintText: hintText,
+          labelText: "Email",
+          labelStyle: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+          filled: true,
+          fillColor: Colors.white,
+          // focusedBorder: OutlineInputBorder(
+          //     borderRadius: BorderRadius.circular(20.0),
+          //     borderSide:
+          //         BorderSide(color: Colors.deepOrangeAccent, width: 2.5)),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          // enabled: true,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(color: Color(0xff205a59), width: 1),
+          ),
+          // disabledBorder: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(10.0),
+          //   borderSide: BorderSide(color: Colors.green, width: 5),
+          // ),
+        ),
+        validator: validator,
       ),
-      validator: validator,
     );
   }
 }
